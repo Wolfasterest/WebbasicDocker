@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+ {%block title %}Register-Websecurity{%endblock%}
+
+ {%block content%} 
+    <div class="container">
+    <div class="card mt-5">
+  <div class="card-body">
+ 
+        <form action="." method="post" >
+            {% csrf_token %}
+            <form action="." method="post" >
+            <input type="hidden" name="csrfmiddlewaretoken" value="suVk4ZeCfKbK6ZMFNRfCcCOY5c5kAzEGUPFKgkN2PdzfYwALwSnw9WX2ORuG7HJt">
+            <p><label for="id_email" me-5>Email:</label> <input type="Email" name="email" autofocus autocapitalize="none" autocomplete="Email" maxlength="150" required id="id_email"></p>
+            <p><label for="id_username">Username:</label> <input type="text" name="username" autofocus autocapitalize="none" autocomplete="username" maxlength="150" required id="id_username"></p>
+            <p><label for="id_password">Password:</label> <input type="password" name="password" autocomplete="current-password" required id="id_password"></p>
+        <button type="submit" class="btn btn-primary" >Sign up</button>
+        </form>
+    </div>
+    </div>
+    </div>
+ {%endblock%}

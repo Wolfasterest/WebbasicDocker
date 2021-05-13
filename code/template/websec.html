@@ -1,0 +1,44 @@
+{% extends './base.html' %}
+{%block content%} 
+<div class="container content">
+    <h1> Web Application Security </h1>
+    <br>
+    <h2>What is web application security</h2>
+<p>Web application security is the process of protecting websites and online services against different security threats that exploit vulnerabilities in an application’s code. Common targets for web application attacks are content management systems (e.g., WordPress), database administration tools (e.g., phpMyAdmin) and SaaS applications.</p>
+<p>Perpetrators consider web applications high-priority targets due to:</p>
+<ul>
+<li>The inherent complexity of their source code, which increases the likelihood of unattended vulnerabilities and malicious code manipulation.</li>
+<li>High value rewards, including sensitive private data collected from successful source code manipulation.</li>
+<li>Ease of execution, as most attacks can be easily automated and launched indiscriminately against thousands, or even tens or hundreds of thousands of targets at a time.</li>
+</ul>
+<p>Organizations failing to secure their web applications run the risk of being attacked. Among other consequences, this can result in information theft, damaged client relationships, revoked licenses and legal proceedings.</p>
+<h2>Web application vulnerabilities</h2>
+<p>Web application vulnerabilities are typically the result of a lack of input/output sanitization, which are often exploited to either manipulate source code or gain unauthorized access.</p>
+<p>Such vulnerabilities enable the use of different attack vectors, including:</p>
+<ul>
+<li><a href="https://www.imperva.com/learn/application-security/sql-injection-sqli/" target="_blank" rel="noopener noreferrer"><span class="bold-text">SQL Injection</span></a> – Occurs when a perpetrator uses malicious SQL code to manipulate a backend database so it reveals information. Consequences include the unauthorized viewing of lists, deletion of tables and unauthorized administrative access.</li>
+<li><a href="https://www.imperva.com/learn/application-security/cross-site-scripting-xss-attacks/" target="_blank" rel="noopener noreferrer"><span class="bold-text">Cross-site Scripting (XSS)</span></a> – XSS is an injection attack targeting users in order to access accounts, activate Trojans or modify page content. Stored XSS occurs when malicious code is injected directly into an application. <a href="https://www.imperva.com/learn/application-security/reflected-xss-attacks/" target="_blank" rel="noopener noreferrer">Reflected XSS</a>takes place when malicious script is reflected off of an application onto a user’s browser.</li>
+<li><a href="https://www.imperva.com/learn/application-security/rfi-remote-file-inclusion/" target="_blank" rel="noopener noreferrer"><span class="bold-text">Remote File Inclusion</span></a> – A hacker uses this type of attack to remotely inject a file onto a web application server. This can result in the execution of malicious scripts or code within the application, as well as data theft or manipulation.</li>
+<li><a href="https://www.imperva.com/learn/application-security/csrf-cross-site-request-forgery/" target="_blank" rel="noopener noreferrer"><span class="bold-text">Cross-site Request Forgery (CSRF)</span></a> – An attack that could result in an unsolicited transfer of funds, changed passwords or data theft. It’s caused when a malicious web application makes a user’s browser perform an unwanted action in a site to which a user is logged on.</li>
+</ul>
+<p>In theory, thorough input/output sanitization could eliminate all vulnerabilities, making an application immune to unlawful manipulation.</p>
+<p>However, complete sanitization usually isn’t a practical option, since most applications exist in a constant development state. Moreover, applications are also frequently integrated with each other to create an increasingly complex coded environment.</p>
+<p>Web application security solutions and enforced security procedures, such as PCI Data Security Standard (<a href="https://www.imperva.com/learn/data-security/pci-dss-certification/" target="_blank" rel="noopener noreferrer">PCI DSS</a>) certification, should be deployed to avoid such threats.</p>
+<h2>Web application firewall (WAF)</h2>
+<p><img loading="lazy" class="aligncenter wp-image-171 size-full" src="https://www.imperva.com/learn/wp-content/uploads/sites/13/2019/01/web-application-firewall.png.webp" alt="Web Application Firewall" width="680" height="344" srcset="https://www.imperva.com/learn/wp-content/uploads/sites/13/2019/01/web-application-firewall.png.webp 680w,https://www.imperva.com/learn/wp-content/uploads/sites/13/2019/01/web-application-firewall-300x152.png.webp 300w,https://www.imperva.com/learn/wp-content/uploads/sites/13/2019/01/web-application-firewall-670x339.png 670w,https://www.imperva.com/learn/wp-content/uploads/sites/13/2019/01/web-application-firewall-510x258.png 510w,https://www.imperva.com/learn/wp-content/uploads/sites/13/2019/01/web-application-firewall-99x50.png 99w,https://www.imperva.com/learn/wp-content/uploads/sites/13/2019/01/web-application-firewall-660x334.png 660w,https://www.imperva.com/learn/wp-content/uploads/sites/13/2019/01/web-application-firewall-420x212.png 420w" sizes="(max-width: 680px) 100vw, 680px" /></p>
+<p>Web application firewalls (WAFs) are hardware and software solutions used for protection from <a href="/products/application-security/">application security</a> threats. These solutions are designed to examine incoming traffic to block attack attempts, thereby compensating for any code sanitization deficiencies.</p>
+<p>By securing data from theft and manipulation, WAF deployment meets a key criteria for PCI DSS certification. Requirement 6.6 states that all credit and debit cardholder data held in a database must be protected.</p>
+<p>Generally, deploying a WAF doesn’t require making any changes to an application, as it is placed ahead of its DMZ at the edge of a network. From there, it acts as a gateway for all incoming traffic, blocking malicious requests before they have a chance to interact with an application.</p>
+<p>WAFs use several different heuristics to determine which traffic is given access to an application and which needs to be weeded out. A constantly-updated signature pool enables them to instantly identify bad actors and known attack vectors.</p>
+<p>Almost all WAFs can be custom-configured for specific use cases and security policies, and to combat emerging (a.k.a., zero-day) threats. Finally, most modern solutions leverage reputational and behavior data to gain additional insights into incoming traffic.</p>
+<p>WAFs are typically integrated with other security solutions to form a security perimeter. These may include distributed denial of service (DDoS) protection services that provide additional scalability required to block high-volume attacks.</p>
+<h2>Web application security checklist</h2>
+<p>In addition to WAFs, there are a number of methods for securing web applications. The following processes should be part of any web application security checklist:</p>
+<ul>
+<li><span class="bold-text">Information gathering</span> – Manually review the application, identifying entry points and client-side codes. Classify third-party hosted content.</li>
+<li><span class="bold-text">Authorization</span> – Test the application for path traversals; vertical and horizontal access control issues; missing authorization and insecure, direct object references.</li>
+<li><span class="bold-text">Cryptography</span> – Secure all data transmissions. Has specific data been encrypted? Have weak algorithms been used? Do randomness errors exist?</li>
+<li><span class="bold-text">Denial of service</span> – Improve an application’s resilience against <a href="https://www.imperva.com/learn/application-security/denial-of-service/" target="_blank" rel="noopener noreferrer">denial of service</a> threats by testing for anti-automation, account lockout, HTTP protocol DoS and SQL wildcard DoS. This doesn’t cover protection from high-volume DoS and DDoS attacks, which are best countered by a combination of filtering solutions and scalable resources.</li>
+</ul>
+</div>
+{%endblock%}

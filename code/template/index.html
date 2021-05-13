@@ -1,0 +1,32 @@
+{% extends './base.html' %}
+{%block content%} 
+<div class="container content">
+    <h1> Top 10 Owasp </h1>
+    {%for item in object_list%}
+        <div class="card" style="width: 20rem;">
+        <img src="{{ item.picture.url }}" class="card-img-top" alt="Doesn't exist" width="600" >
+        <div class="card-body">
+            <h5 class="card-title" >{{item.name}}</h5>
+            <p class="card-text" >{{item.short}}</p>
+            <a href=" {{ item.description }} " target="blank" class="btn btn-primary">More...</a>
+        </div>
+        </div>
+    {% endfor %}
+</div>
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>{% endblock%}
