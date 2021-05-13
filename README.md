@@ -1,6 +1,6 @@
 # WebbasicDocker
 Requirement :
-  Build bic Web  and Docker
+  Build basic Web  and Docker
   
  Folder: 
   - Webblog :Project
